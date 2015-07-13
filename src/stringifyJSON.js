@@ -28,7 +28,7 @@ var stringifyJSON = function(obj) {
 
 	else if (typeof obj === "object") {
 		var keys = Object.keys(obj);
-		if (keys[0] === undefined) {
+		if (keys[0] === undefined || typeof obj[keys[0]] === "undefined" || typeof obj[keys[0]] === "function") {
 			return '{}';
 		}
 		for (var i = 0; i < keys.length; i++) {
